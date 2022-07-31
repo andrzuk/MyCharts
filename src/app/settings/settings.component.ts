@@ -79,6 +79,7 @@ export class SettingsComponent implements OnInit {
       this.message = data.message;
       this.type = data.success ? 'success' : 'error';
       this.getSettingsFromServer();
+      this.router.navigateByUrl("/admin");
     });
   }
 }

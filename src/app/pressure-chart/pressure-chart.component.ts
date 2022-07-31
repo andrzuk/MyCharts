@@ -11,6 +11,8 @@ import { HttpService } from "../http.service";
 })
 export class PressureChartComponent implements OnInit {
 
+  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+
   pressureData: any = [];
   lastPressureData: any = [];
 
@@ -94,6 +96,4 @@ export class PressureChartComponent implements OnInit {
   };
 
   public pressChartType: ChartType = 'line';
-
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 }

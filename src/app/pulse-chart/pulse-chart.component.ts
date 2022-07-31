@@ -11,6 +11,8 @@ import { HttpService } from "../http.service";
 })
 export class PulseChartComponent implements OnInit {
 
+  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+
   pulseData: any = [];
   lastPulseData: any = [];
 
@@ -81,6 +83,4 @@ export class PulseChartComponent implements OnInit {
   };
 
   public pulseChartType: ChartType = 'line';
-
-  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 }
