@@ -28,17 +28,17 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Init Application
 
-`ng new MyCharts`
-`cd MyCharts`
+### `npm install -g @angular/cli`
+### `ng new MyCharts`
+### `cd MyCharts`
 
 ## Install required packages
 
-`npm install --save ng2-charts`
-`npm install --save chart.js`
+### `npm install --save ng2-charts`
+### `npm install --save chart.js`
 
-`npm install ngx-bootstrap --save`
+### `npm install ngx-bootstrap --save`
 
-`npm install @fortawesome/fontawesome-svg-core`
-`npm install @fortawesome/free-solid-svg-icons`
-`npm install @fortawesome/angular-fontawesome@*`
-
+### `npm install @fortawesome/fontawesome-svg-core`
+### `npm install @fortawesome/free-solid-svg-icons`
+### `npm install @fortawesome/angular-fontawesome@*`
