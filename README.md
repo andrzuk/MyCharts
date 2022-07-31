@@ -25,3 +25,20 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Init Application
+
+`ng new MyCharts`
+`cd MyCharts`
+
+## Install required packages
+
+`npm install --save ng2-charts`
+`npm install --save chart.js`
+
+`npm install ngx-bootstrap --save`
+
+`npm install @fortawesome/fontawesome-svg-core`
+`npm install @fortawesome/free-solid-svg-icons`
+`npm install @fortawesome/angular-fontawesome@*`
+
