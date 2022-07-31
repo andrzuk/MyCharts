@@ -1,0 +1,111 @@
+<div class="settings-page" *ngIf="appComponent.loggedIn">
+
+    <div class="container">
+
+        <div class="row mb-3">
+            <div class="col align-self-center">
+                <div class="card settings">
+                    <div class="card-header">
+                        <h5 class="card-title">Ustawienia</h5>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="settingsForm" (ngSubmit)="saveClick()">
+                            <div class="my-2 row">
+                                <div class="col-4">
+                                    <label for="app_title">Tytuł:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="app_title" formControlName="app_title">
+                                </div>
+                            </div>
+                            <div class="my-2 row">
+                                <div class="col-4">
+                                    <label for="app_logo">Logo:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" id="app_logo" formControlName="app_logo">
+                                </div>
+                            </div>
+                            <div class="my-2 row">
+                                <div class="col-8">
+                                    <label for="last_values_limit">Ostatnie wyniki:</label>
+                                </div>
+                                <div class="col-4">
+                                    <input type="text" class="form-control" id="last_values_limit" formControlName="last_values_limit">
+                                </div>
+                            </div>
+                            <div class="my-2 row">
+                                <div class="col-8">
+                                    <label for="present_data_limit">Limit pakietu danych:</label>
+                                </div>
+                                <div class="col-4">
+                                    <input type="text" class="form-control" id="present_data_limit" formControlName="present_data_limit">
+                                </div>
+                            </div>
+                            <div class="my-2 row">
+                                <div class="col-8">
+                                    <label for="sys_border_high">Górny przedział SYS:</label>
+                                </div>
+                                <div class="col-4">
+                                    <input type="text" class="form-control" id="sys_border_high" formControlName="sys_border_high">
+                                </div>
+                            </div>
+                            <div class="my-2 row">
+                                <div class="col-8">
+                                    <label for="sys_border_low">Dolny przedział SYS:</label>
+                                </div>
+                                <div class="col-4">
+                                    <input type="text" class="form-control" id="sys_border_low" formControlName="sys_border_low">
+                                </div>
+                            </div>
+                            <div class="my-2 row">
+                                <div class="col-8">
+                                    <label for="dia_border_high">Górny przedział DIA:</label>
+                                </div>
+                                <div class="col-4">
+                                    <input type="text" class="form-control" id="dia_border_high" formControlName="dia_border_high">
+                                </div>
+                            </div>
+                            <div class="my-2 row">
+                                <div class="col-8">
+                                    <label for="dia_border_low">Dolny przedział DIA:</label>
+                                </div>
+                                <div class="col-4">
+                                    <input type="text" class="form-control" id="dia_border_low" formControlName="dia_border_low">
+                                </div>
+                            </div>
+                            <div class="my-2 row">
+                                <div class="col-8">
+                                    <label for="pulse_border_high">Górny przedział Pulse:</label>
+                                </div>
+                                <div class="col-4">
+                                    <input type="text" class="form-control" id="pulse_border_high" formControlName="pulse_border_high">
+                                </div>
+                            </div>
+                            <div class="my-2 row">
+                                <div class="col-8">
+                                    <label for="pulse_border_low">Dolny przedział Pulse:</label>
+                                </div>
+                                <div class="col-4">
+                                    <input type="text" class="form-control" id="pulse_border_low" formControlName="pulse_border_low">
+                                </div>
+                            </div>
+                            <div class="my-4 row">
+                                <div class="col-12">
+                                    <input type="submit" class="btn btn-primary form-control" value="Zapisz">
+                                </div>
+                            </div>
+                            <div class="mt-4 row">
+                                <div class="col-12">
+                                    <div id="input-message" class="message {{ type }}" *ngIf="message">{{ message }}</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>    
+            </div>  
+        </div>
+
+    </div>
+
+</div>

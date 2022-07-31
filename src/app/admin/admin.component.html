@@ -1,0 +1,71 @@
+<div class="admin-page" *ngIf="appComponent.loggedIn">
+
+    <div class="container">
+
+        <div class="row mb-3">
+            <div class="col align-self-center">
+                <div class="card admin">
+                    <div class="card-header">
+                        <h5 class="card-title">Admin Panel</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <fa-icon [icon]="faUser"></fa-icon>
+                                    </div>
+                                    <div class="col-9">
+                                        <span class="login"><b>{{ user_login }}</b></span>
+                                        <span class="email"><b>{{ user_email }}</b></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <fa-icon [icon]="faComputer"></fa-icon>
+                                    </div>
+                                    <div class="col-9">
+                                        <span class="loggedin">{{ logged_in }}</span>
+                                        <span class="loggedout">{{ logged_out }}</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="action-icons">
+                                    <span class="action-item">
+                                        <a routerLink="/input">
+                                            <fa-icon [icon]="faNotesMedical"></fa-icon>
+                                            <div class="label">Pomiar</div>
+                                        </a>
+                                    </span>
+                                    <span class="action-item">
+                                        <a routerLink="/list">
+                                            <fa-icon [icon]="faTableColumns"></fa-icon>
+                                            <div class="label">Lista</div>
+                                        </a>
+                                    </span>
+                                    <span class="action-item">
+                                        <a routerLink="/charts">
+                                            <fa-icon [icon]="faChartColumn"></fa-icon>
+                                            <div class="label">Wykresy</div>
+                                        </a>
+                                    </span>
+                                    <span class="action-item">
+                                        <a routerLink="/settings">
+                                            <fa-icon [icon]="faCog"></fa-icon>
+                                            <div class="label">Ustawienia</div>
+                                        </a>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

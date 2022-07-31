@@ -1,0 +1,22 @@
+.input-page {
+}
+
+.input-form, .history {
+    display: inline-block;
+    width: 300px;
+    text-align: left;
+    .card-header {
+        color: #666;
+    }
+}
+
+.message {
+    text-align: center;
+    font-size: small;
+}
+.success {
+    color: #090;
+}
+.error {
+    color: #c00;
+}

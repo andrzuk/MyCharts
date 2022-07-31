@@ -1,0 +1,12 @@
+<div class="flex">
+    <div class="flex-item">
+        <div style="display: block;">
+            <canvas baseChart width="200" height="200"
+                    [data]="sysStatsChartData"
+                    [options]="sysStatsChartOptions"
+                    [type]="sysStatsChartType">
+            </canvas>
+        </div>
+        <div class="average">Średnia: <b>{{ valuesAverage }}</b></div>
+    </div>
+</div>

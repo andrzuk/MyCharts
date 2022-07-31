@@ -1,7 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './admin/admin.component';
+import { ChartsComponent } from './charts/charts.component';
+import { HomeComponent } from './home/home.component';
+import { InputComponent } from './input/input.component';
+import { ListComponent } from './list/list.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { SettingsComponent } from './settings/settings.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: "", component: HomeComponent },
+  { path: "login", component: LoginComponent },
+  { path: "admin", component: AdminComponent },
+  { path: "input", component: InputComponent },
+  { path: "charts", component: ChartsComponent },
+  { path: "list", component: ListComponent },
+  { path: "logout", component: LogoutComponent },
+  { path: "settings", component: SettingsComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

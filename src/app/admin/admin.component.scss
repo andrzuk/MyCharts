@@ -1,0 +1,54 @@
+.admin-page {
+}
+
+.admin {
+    display: inline-block;
+    width: 300px;
+    text-align: left;
+    .card-header {
+        color: #666;
+    }
+}
+
+fa-icon {
+    font-size: 2em;
+    color: #666;
+}
+
+span.login, span.email {
+    display: block;
+    color: #666;
+}
+span.loggedin {
+    display: block;
+    color: #090;
+}
+span.loggedout {
+    display: block;
+    color: #c00;
+}
+
+div.action-icons {
+    display: block;
+    text-align: center;
+    span.action-item {
+        display: inline-block;
+        text-align: center;
+        margin: .85em;
+        a {
+            color: #666;
+            text-decoration: none;
+            :hover {
+                color: #999;
+            }
+            fa-icon {
+                font-size: 3em;
+            }
+            div.label {
+                margin-top: -0.5em;
+                font-size: small;
+                font-weight: bold;
+            }
+        }    
+    }
+}

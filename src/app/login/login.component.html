@@ -1,0 +1,41 @@
+<div class="login-page" *ngIf="!appComponent.loggedIn">
+
+    <div class="container">
+        <div class="row">
+          <div class="col align-self-center">
+            <div class="card login-form">
+                <div class="card-header">
+                    <h5 class="card-title">Logowanie</h5>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="loginClick()">
+                          <div class="row">
+                              <label for="email" class="col-form-label">Konto:</label>
+                              <div class="col-12">
+                                  <input type="text" class="form-control" id="email" formControlName="email">
+                              </div>
+                          </div>
+                          <div class="row">
+                              <label for="password" class="col-form-label">Hasło:</label>
+                              <div class="col-12">
+                                  <input type="password" class="form-control" id="password" formControlName="password">
+                              </div>
+                          </div>
+                          <div class="my-4 row">
+                              <div class="col-12">
+                                  <input type="submit" class="btn btn-primary form-control" value="Zaloguj">
+                              </div>
+                          </div>
+                          <div class="mt-4 row">
+                              <div class="col-12">
+                                  <div id="login-message" class="message" *ngIf="message">{{ message }}</div>
+                              </div>
+                          </div>
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>

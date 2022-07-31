@@ -1,0 +1,97 @@
+<div class="input-page" *ngIf="appComponent.loggedIn">
+
+    <div class="container">
+
+        <div class="row mb-3">
+            <div class="col align-self-center">
+                <div class="card history">
+                    <div class="card-header">
+                        <h5 class="card-title">Ostatnie wpisy</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                  <th scope="col">Id</th>
+                                  <th scope="col">Pora</th>
+                                  <th scope="col">SYS</th>
+                                  <th scope="col">DIA</th>
+                                  <th scope="col">Pulse</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let item of lastData">
+                                  <th scope="row">{{ item.id }}</th>
+                                  <td>{{ item.season }}</td>
+                                  <td>{{ item.sys }}</td>
+                                  <td>{{ item.dia }}</td>
+                                  <td>{{ item.pulse }}</td>
+                                </tr>
+                              </tbody>
+                        </table>
+                    </div>
+                </div>    
+            </div>  
+        </div>
+
+        <div class="row mt-4">
+          <div class="col align-self-center">
+            <div class="card input-form">
+                <div class="card-header">
+                    <h5 class="card-title">Nowe ciśnienie</h5>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="inputForm" (ngSubmit)="inputClick()">
+                        <div class="my-2 row">
+                            <div class="col-4">
+                                <label for="season">Pora:</label>
+                            </div>
+                            <div class="col-8">
+                                <select class="form-select" id="season" formControlName="season">
+                                    <option value="R">Rano</option>
+                                    <option value="W">Wieczór</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="my-2 row">
+                            <div class="col-4">
+                                <label for="sys">SYS:</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="form-control" id="sys" formControlName="sys">
+                            </div>
+                        </div>
+                        <div class="my-2 row">
+                            <div class="col-4">
+                                <label for="dia">DIA:</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="form-control" id="dia" formControlName="dia">
+                            </div>
+                        </div>
+                        <div class="my-2 row">
+                            <div class="col-4">
+                                <label for="pulse">Pulse:</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="form-control" id="pulse" formControlName="pulse">
+                            </div>
+                        </div>
+                        <div class="my-4 row">
+                            <div class="col-12">
+                                <input type="submit" class="btn btn-primary form-control" value="Zapisz">
+                            </div>
+                        </div>
+                        <div class="mt-4 row">
+                            <div class="col-12">
+                                <div id="input-message" class="message {{ type }}" *ngIf="message">{{ message }}</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+</div>

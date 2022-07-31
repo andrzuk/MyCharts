@@ -1,0 +1,17 @@
+.login-page {
+}
+
+.login-form {
+    display: inline-block;
+    width: 300px;
+    text-align: left;
+    .card-header {
+        color: #666;
+    }
+}
+
+.message {
+    color: #c00;
+    text-align: center;
+    font-size: small;
+}
