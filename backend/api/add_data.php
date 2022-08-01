@@ -34,11 +34,11 @@ if (!empty($season) && !empty($sys) && !empty($dia) && !empty($pulse) && !empty(
 		$statement->execute();
 		
 		if ($statement->rowCount()) {
-			$message = 'Rekord został poprawnie zapisany.';
+			$message = 'Pomiar został poprawnie zapisany.';
 			$success = true;
 		} 
 		else {
-			$message = 'Rekord nie został zapisany.';
+			$message = 'Pomiar nie został zapisany.';
 			$success = false;
 		}
 	}
