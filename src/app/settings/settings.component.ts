@@ -39,6 +39,9 @@ export class SettingsComponent implements OnInit {
         this.appComponent.loggedIn = data.success;
         if (this.appComponent.loggedIn) {
           this.getSettingsFromServer();
+          setTimeout(() => {
+            document.getElementById('app_title')?.focus();
+          }, AppConstants.focusDelay);  
         }
         else {
           this.router.navigateByUrl("/login");

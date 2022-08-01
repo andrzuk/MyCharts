@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         else {
           setTimeout(() => {
             document.getElementById('email')?.focus();
-          }, 500);
+          }, AppConstants.focusDelay);
         }
       });
     }
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       this.appComponent.loggedIn = false;
       setTimeout(() => {
         document.getElementById('email')?.focus();
-      }, 500);
+      }, AppConstants.focusDelay);
     }
   }
 
@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
         this.message = data.message;
         setTimeout(() => {
           document.getElementById('email')?.focus();
-        }, 500);
+        }, AppConstants.focusDelay);
       }
     })
     this.loginForm.setValue({ email: '', password: '' });

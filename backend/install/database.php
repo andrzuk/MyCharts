@@ -60,12 +60,12 @@ INSERT INTO `settings` (`id`, `key_name`, `key_value`, `meaning`, `modified`) VA
 (2, 'app_logo', 'faHome', 'ikona przed tytułem aplikacji', '2022-07-29 12:21:30'),
 (3, 'last_values_limit', '4', 'limit listy ostatnich wartości', '2022-07-29 12:24:40'),
 (4, 'present_data_limit', '40', 'limit danych na liście i wykresach', '2022-07-29 12:27:24'),
-(5, 'sys_border_high', '170', 'górna granica dla SYS', '2022-07-29 12:29:23'),
-(6, 'sys_border_low', '160', 'dolna granica dla SYS', '2022-07-29 12:29:23'),
-(7, 'dia_border_high', '110', 'górna granica dla DIA', '2022-07-29 12:32:45'),
-(8, 'dia_border_low', '95', 'dolna granica dla DIA', '2022-07-29 12:32:45'),
-(9, 'pulse_border_high', '75', 'górna granica dla Pulse', '2022-07-29 12:34:21'),
-(10, 'pulse_border_low', '65', 'dolna granica dla Pulse', '2022-07-29 12:34:21');
+(5, 'sys_border_high', '130', 'górna granica dla SYS', '2022-07-29 12:29:23'),
+(6, 'sys_border_low', '110', 'dolna granica dla SYS', '2022-07-29 12:29:23'),
+(7, 'dia_border_high', '90', 'górna granica dla DIA', '2022-07-29 12:32:45'),
+(8, 'dia_border_low', '70', 'dolna granica dla DIA', '2022-07-29 12:32:45'),
+(9, 'pulse_border_high', '80', 'górna granica dla Pulse', '2022-07-29 12:34:21'),
+(10, 'pulse_border_low', '60', 'dolna granica dla Pulse', '2022-07-29 12:34:21');
 
 -- --------------------------------------------------------
 
