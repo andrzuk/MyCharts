@@ -83,10 +83,12 @@ export class SettingsComponent implements OnInit {
     this.httpService.setSettingsData(this.settingsForm.value).subscribe((data: any) => {
       this.message = data.message;
       this.type = data.success ? 'success' : 'error';
-      this.httpService.getSettings().subscribe((data: any) => {
-        this.appComponent.settings = data.result;
-      });  
-      this.router.navigateByUrl("/admin");
+      if (data.success) {
+        this.httpService.getSettings().subscribe((data: any) => {
+          this.appComponent.settings = data.result;
+        });  
+        this.router.navigateByUrl("/admin");
+      }
     });
   }
 
