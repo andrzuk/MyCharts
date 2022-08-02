@@ -50,7 +50,7 @@ export class AppComponent {
 
   getSetting(keyName: string) {
     let result;
-    if (this.settings && this.settings.length) {
+    if (this.settings) {
       this.settings.forEach((setting: any) => {
         if (setting.key_name == keyName) {
           result = setting.key_value;
