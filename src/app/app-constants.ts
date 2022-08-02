@@ -26,5 +26,8 @@ export class AppConstants {
     public static get focusDelay(): number {
       return 500;
     }
+    public static get routeDelay(): number {
+      return 1000;
+    }
   }
   
