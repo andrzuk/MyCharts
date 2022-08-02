@@ -109,7 +109,7 @@ if (!empty($app_title) && !empty($app_logo) && !empty($last_values_limit) && !em
 		}
 	}
 	else {
-		$message = 'Twoja sesja wygasła lub została zmieniona.';
+		$message = 'Nie posiadasz wystarczających uprawnień.';
 		$success = false;
 	}
 } 
