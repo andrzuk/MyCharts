@@ -6,14 +6,14 @@
             <div class="col align-self-center">
                 <div class="card admin">
                     <div class="card-header">
-                        <h5 class="card-title">Admin Panel</h5>
+                        <h5 class="card-title"><fa-icon [icon]="faScrewdriverWrench" class="label"></fa-icon>Admin Panel</h5>
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-3">
-                                        <fa-icon [icon]="faUser"></fa-icon>
+                                        <fa-icon [icon]="faUser" class="section"></fa-icon>
                                     </div>
                                     <div class="col-9">
                                         <span class="login"><b>{{ user_login }}</b></span>
@@ -24,7 +24,7 @@
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-3">
-                                        <fa-icon [icon]="faComputer"></fa-icon>
+                                        <fa-icon [icon]="faComputer" class="section"></fa-icon>
                                     </div>
                                     <div class="col-9">
                                         <span class="loggedin">{{ logged_in }}</span>
@@ -42,7 +42,7 @@
                                     </span>
                                     <span class="action-item">
                                         <a routerLink="/list">
-                                            <fa-icon [icon]="faTableColumns"></fa-icon>
+                                            <fa-icon [icon]="faListOl"></fa-icon>
                                             <div class="label">Lista</div>
                                         </a>
                                     </span>

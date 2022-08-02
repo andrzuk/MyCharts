@@ -6,6 +6,9 @@ import { Router } from "@angular/router";
 import { AppConstants } from "../app-constants";
 import { AppComponent } from "../app.component";
 
+import { faListOl } from '@fortawesome/free-solid-svg-icons';
+import { faNotesMedical } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
@@ -63,4 +66,7 @@ export class InputComponent implements OnInit {
     });
     this.inputForm.setValue({ season: '', sys: '', dia: '', pulse: '' });
   }
+
+  faListOl = faListOl;
+  faNotesMedical = faNotesMedical;
 }

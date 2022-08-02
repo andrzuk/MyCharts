@@ -1,17 +1,17 @@
 <!-- Responsive navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" routerLink="/">{{ title }}</a>
+    <a class="navbar-brand" routerLink="/"><fa-icon [icon]="faHeartCircleCheck" class="label"></fa-icon>{{ title }}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" routerLink="/login" *ngIf="!loggedIn">Zaloguj</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/login" *ngIf="!loggedIn"><fa-icon [icon]="faRightToBracket" class="label"></fa-icon>Zaloguj</a></li>
         <li class="nav-item dropdown" *ngIf="loggedIn">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.name.toUpperCase() }}</a>
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><fa-icon [icon]="faUserNurse" class="label"></fa-icon>{{ user.name.toUpperCase() }}</a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="/admin">Admin Panel</a></li>
+            <li><a class="dropdown-item" routerLink="/admin"><fa-icon [icon]="faScrewdriverWrench" class="label"></fa-icon>Admin Panel</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" routerLink="/logout">Logout</a></li>
+            <li><a class="dropdown-item" routerLink="/logout"><fa-icon [icon]="faRightFromBracket" class="label"></fa-icon>Logout</a></li>
           </ul>
         </li>
       </ul>

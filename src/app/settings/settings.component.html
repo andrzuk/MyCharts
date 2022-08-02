@@ -6,7 +6,7 @@
             <div class="col align-self-center">
                 <div class="card settings">
                     <div class="card-header">
-                        <h5 class="card-title">Ustawienia</h5>
+                        <h5 class="card-title"><fa-icon [icon]="faCog" class="label"></fa-icon>Ustawienia</h5>
                     </div>
                     <div class="card-body">
                         <form [formGroup]="settingsForm" (ngSubmit)="saveClick()">

@@ -6,6 +6,8 @@ import { Router } from "@angular/router";
 import { AppConstants } from "../app-constants";
 import { AppComponent } from "../app.component";
 
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
@@ -85,4 +87,6 @@ export class SettingsComponent implements OnInit {
       this.router.navigateByUrl("/admin");
     });
   }
+
+  faCog = faCog;
 }

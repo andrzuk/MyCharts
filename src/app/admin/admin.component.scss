@@ -10,7 +10,7 @@
     }
 }
 
-fa-icon {
+fa-icon.section {
     font-size: 2em;
     color: #666;
 }
@@ -34,7 +34,7 @@ div.action-icons {
     span.action-item {
         display: inline-block;
         text-align: center;
-        margin: .85em;
+        margin: 1.0em;
         a {
             color: #666;
             text-decoration: none;
@@ -42,7 +42,7 @@ div.action-icons {
                 color: #999;
             }
             fa-icon {
-                font-size: 3em;
+                font-size: 4em;
             }
             div.label {
                 margin-top: -0.5em;

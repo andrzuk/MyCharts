@@ -6,6 +6,8 @@ import { Router } from "@angular/router";
 import { AppConstants } from "../app-constants";
 import { AppComponent } from "../app.component";
 
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -72,4 +74,6 @@ export class LoginComponent implements OnInit {
     })
     this.loginForm.setValue({ email: '', password: '' });
   }
+
+  faRightToBracket = faRightToBracket;
 }

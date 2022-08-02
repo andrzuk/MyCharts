@@ -5,6 +5,8 @@ import { Router } from "@angular/router";
 import { AppConstants } from "../app-constants";
 import { AppComponent } from "../app.component";
 
+import { faListOl } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -44,4 +46,6 @@ export class ListComponent implements OnInit {
       }
     });
   }
+
+  faListOl = faListOl;
 }
