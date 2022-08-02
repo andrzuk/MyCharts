@@ -12,7 +12,7 @@ function get_token() {
 	return $token;	
 }
 
-function check_access($token, $db_connection) {
+function check_access($token, $levels, $db_connection) {
 	
 	$result = false;
 	
@@ -20,6 +20,7 @@ function check_access($token, $db_connection) {
 		
 		$query = 'SELECT id FROM users' .
 		'         WHERE token = :token' .
+		'         AND status IN ('. implode(', ', $levels) .')' .
 		'         AND active = 1' .
 		'         ORDER BY logged_in DESC LIMIT 1';
 

@@ -20,7 +20,7 @@ if (!empty($season) && !empty($sys) && !empty($dia) && !empty($pulse) && !empty(
 	
 	$db_connection = connect();
 	
-	if (check_access($token, $db_connection)) {
+	if (check_access($token, array(ADMIN, OPERATOR), $db_connection)) {
 
 		$query = 'INSERT INTO _pressure (season, sys, dia, pulse)' .
 		'         VALUES (:season, :sys, :dia, :pulse)';
@@ -43,7 +43,7 @@ if (!empty($season) && !empty($sys) && !empty($dia) && !empty($pulse) && !empty(
 		}
 	}
 	else {
-		$message = 'Twoja sesja wygasła lub została zmieniona.';
+		$message = 'Nie posiadasz wystarczających uprawnień.';
 		$success = false;
 	}
 } 

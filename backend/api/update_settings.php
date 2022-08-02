@@ -27,7 +27,7 @@ if (!empty($app_title) && !empty($app_logo) && !empty($last_values_limit) && !em
 	
 	$db_connection = connect();
 	
-	if (check_access($token, $db_connection)) {
+	if (check_access($token, array(ADMIN, OPERATOR), $db_connection)) {
 
 		$query = "UPDATE settings SET key_value = :app_title, modified = NOW()" .
 		"         WHERE key_name = 'app_title'";

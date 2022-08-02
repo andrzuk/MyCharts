@@ -16,7 +16,7 @@ if (!empty($token)) {
 	
 	$db_connection = connect();
 
-	if (check_access($token, $db_connection)) {
+	if (check_access($token, array(ADMIN, OPERATOR, USER), $db_connection)) {
 		
 		$query = 'SELECT * FROM _pressure' .
 		'         ORDER BY id DESC';
