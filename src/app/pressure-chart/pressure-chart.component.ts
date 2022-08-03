@@ -89,7 +89,6 @@ export class PressureChartComponent implements OnInit {
       },
     },
     maintainAspectRatio: false,
-
     plugins: {
       legend: { display: true },
     }

@@ -76,7 +76,6 @@ export class PulseChartComponent implements OnInit {
       },
     },
     maintainAspectRatio: false,
-
     plugins: {
       legend: { display: true },
     }
