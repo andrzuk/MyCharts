@@ -28,6 +28,8 @@ export class SettingsComponent implements OnInit {
     dia_border_low: new FormControl(''),
     pulse_border_high: new FormControl(''),
     pulse_border_low: new FormControl(''),
+    pressure_axis_max: new FormControl(''),
+    pulse_axis_max: new FormControl(''),
   });
   message: any = '';
   type: string = '';
@@ -74,6 +76,8 @@ export class SettingsComponent implements OnInit {
           dia_border_low: this.settingsValues[7],
           pulse_border_high: this.settingsValues[8],
           pulse_border_low: this.settingsValues[9],
+          pressure_axis_max: this.settingsValues[10],
+          pulse_axis_max: this.settingsValues[11],
         });
       }
     });

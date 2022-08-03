@@ -65,7 +65,9 @@ INSERT INTO `settings` (`id`, `key_name`, `key_value`, `meaning`, `modified`) VA
 (7, 'dia_border_high', '90', 'górna granica dla DIA', '2022-07-29 12:32:45'),
 (8, 'dia_border_low', '70', 'dolna granica dla DIA', '2022-07-29 12:32:45'),
 (9, 'pulse_border_high', '80', 'górna granica dla Pulse', '2022-07-29 12:34:21'),
-(10, 'pulse_border_low', '60', 'dolna granica dla Pulse', '2022-07-29 12:34:21');
+(10, 'pulse_border_low', '60', 'dolna granica dla Pulse', '2022-07-29 12:34:21'),
+(11, 'pressure_axis_max', '200', 'wartość max dla wykresu SYS i DIA', '2022-08-03 13:49:49'),
+(12, 'pulse_axis_max', '140', 'wartość max dla wykresu Pulse', '2022-08-03 13:49:49');
 
 -- --------------------------------------------------------
 
@@ -162,7 +164,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT dla tabeli `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`

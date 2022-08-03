@@ -62,7 +62,7 @@ export class PulseStatsChartComponent implements OnInit {
     plugins: {
       legend: {
         display: true,
-        position: 'top',
+        position: 'bottom',
       },
     },
   };

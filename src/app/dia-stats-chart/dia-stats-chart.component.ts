@@ -62,7 +62,7 @@ export class DiaStatsChartComponent implements OnInit {
     plugins: {
       legend: {
         display: true,
-        position: 'top',
+        position: 'bottom',
       },
     },
   };

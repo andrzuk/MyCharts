@@ -79,12 +79,12 @@ export class PressureChartComponent implements OnInit {
       y: {
         position: 'left',
         beginAtZero: true,
-        max: 250,
+        max: parseInt(this.appComponent.getSetting('pressure_axis_max') || ''),
         grid: {
           color: 'rgba(100, 100, 100, 0.3)',
         },
         ticks: {
-          color: '#666'
+          color: 'rgba(100, 100, 100, 1)'
         }
       },
     },

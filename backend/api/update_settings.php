@@ -19,11 +19,13 @@ $dia_border_high = intval($_POST['dia_border_high']);
 $dia_border_low = intval($_POST['dia_border_low']);
 $pulse_border_high = intval($_POST['pulse_border_high']);
 $pulse_border_low = intval($_POST['pulse_border_low']);
+$pressure_axis_max = intval($_POST['pressure_axis_max']);
+$pulse_axis_max = intval($_POST['pulse_axis_max']);
 
 $success = FALSE;
 $affected = 0;
 
-if (!empty($app_title) && !empty($app_logo) && !empty($last_values_limit) && !empty($present_data_limit) && !empty($sys_border_high) && !empty($sys_border_low) && !empty($dia_border_high) && !empty($dia_border_low) && !empty($pulse_border_high) && !empty($pulse_border_low) && !empty($token)) {
+if (!empty($app_title) && !empty($app_logo) && !empty($last_values_limit) && !empty($present_data_limit) && !empty($sys_border_high) && !empty($sys_border_low) && !empty($dia_border_high) && !empty($dia_border_low) && !empty($pulse_border_high) && !empty($pulse_border_low) && !empty($pressure_axis_max) && !empty($pulse_axis_max) && !empty($token)) {
 	
 	$db_connection = connect();
 	
@@ -96,6 +98,20 @@ if (!empty($app_title) && !empty($app_logo) && !empty($last_values_limit) && !em
 		"         WHERE key_name = 'pulse_border_low'";
 		$statement = $db_connection->prepare($query);
 		$statement->bindParam(':pulse_border_low', $pulse_border_low, PDO::PARAM_INT);
+		$statement->execute();
+		$affected += $statement->rowCount();
+
+		$query = "UPDATE settings SET key_value = :pressure_axis_max, modified = NOW()" .
+		"         WHERE key_name = 'pressure_axis_max'";
+		$statement = $db_connection->prepare($query);
+		$statement->bindParam(':pressure_axis_max', $pressure_axis_max, PDO::PARAM_INT);
+		$statement->execute();
+		$affected += $statement->rowCount();
+
+		$query = "UPDATE settings SET key_value = :pulse_axis_max, modified = NOW()" .
+		"         WHERE key_name = 'pulse_axis_max'";
+		$statement = $db_connection->prepare($query);
+		$statement->bindParam(':pulse_axis_max', $pulse_axis_max, PDO::PARAM_INT);
 		$statement->execute();
 		$affected += $statement->rowCount();
 
