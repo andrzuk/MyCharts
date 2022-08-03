@@ -46,8 +46,8 @@ export class PulseChartComponent implements OnInit {
         backgroundColor: 'rgba(0, 160, 0, 0.3)',
         borderColor: 'rgba(0, 160, 0, 1)',
         pointBackgroundColor: 'rgba(0, 160, 0, 1)',
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
+        pointBorderColor: 'rgba(255, 255, 255, 1)',
+        pointHoverBackgroundColor: 'rgba(255, 255, 255, 1)',
         pointHoverBorderColor: 'rgba(0, 160, 0, 1)',
         fill: 'origin',
       }
