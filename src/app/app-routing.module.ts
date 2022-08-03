@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: "list", component: ListComponent },
   { path: "logout", component: LogoutComponent },
   { path: "settings", component: SettingsComponent },
+  { path: "**", component: HomeComponent },
 ];
 
 @NgModule({

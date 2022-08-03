@@ -19,7 +19,7 @@ if (!empty($token)) {
 	if (check_access($token, array(ADMIN, OPERATOR, USER), $db_connection)) {
 		
 		$query = 'SELECT * FROM _pressure' .
-		'         ORDER BY id DESC';
+		'         ORDER BY id DESC LIMIT 100';
 
 		$statement = $db_connection->prepare($query);
 

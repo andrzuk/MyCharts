@@ -22,14 +22,14 @@ export class LogoutComponent implements OnInit {
     const token = localStorage.getItem(AppConstants.accessToken);
     if (token) {
       this.httpService.signOut().subscribe((data: any) => {
+        this.appComponent.user = null;
         this.appComponent.loggedIn = false;
       });
     }
     else {
+      this.appComponent.user = null;
       this.appComponent.loggedIn = false;
     }
-    this.appComponent.user = null;
-    this.appComponent.loggedIn = false;
     localStorage.removeItem(AppConstants.accessToken);
     localStorage.removeItem(AppConstants.userName);
     localStorage.removeItem(AppConstants.userEmail);

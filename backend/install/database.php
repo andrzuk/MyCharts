@@ -91,7 +91,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `password`, `email`, `status`, `logged_in`, `modified`, `logged_out`, `active`, `token`) VALUES
-(1, 'admin', '', 'admin@github.com', 1, '2022-07-31 13:30:45', '2022-07-08 10:08:45', '2022-07-28 22:11:35', 1, '');
+(1, 'demo', '89e495e7941cf9e40e6980d14a16bf023ccd4c91', 'demo@github.com', 1, '2022-08-03 09:19:44', '2022-08-03 08:53:24', '2022-08-03 09:24:20', 1, '');
 
 -- --------------------------------------------------------
 
