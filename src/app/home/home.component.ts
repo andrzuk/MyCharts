@@ -3,6 +3,8 @@ import { Router } from "@angular/router";
 
 import { AppConstants } from "../app-constants";
 
+import { faHeartPulse } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,4 +20,5 @@ export class HomeComponent implements OnInit {
     }, AppConstants.routeDelay);
   }
 
+  faHeartPulse = faHeartPulse;
 }
