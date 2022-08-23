@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HttpService } from "../http.service";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 
 import { AppConstants } from "../app-constants";
 import { AppComponent } from "../app.component";
@@ -23,10 +22,10 @@ export class EditpageComponent implements OnInit {
     editorContent: new FormControl(''),
   });
 
-  constructor(private activatedRout: ActivatedRoute, private httpService: HttpService, private router: Router, public appComponent: AppComponent) { }
+  constructor(private activatedRoute: ActivatedRoute, private httpService: HttpService, private router: Router, public appComponent: AppComponent) { }
 
   ngOnInit(): void {
-    this.activatedRout.paramMap.subscribe(params => {
+    this.activatedRoute.paramMap.subscribe(params => {
       this.routeParam = params.get('id');
     });
     const token = localStorage.getItem(AppConstants.accessToken);

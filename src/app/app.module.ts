@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 
 import { NgChartsModule } from 'ng2-charts';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -23,7 +24,6 @@ import { DiaStatsChartComponent } from './dia-stats-chart/dia-stats-chart.compon
 import { PulseStatsChartComponent } from './pulse-stats-chart/pulse-stats-chart.component';
 import { SettingsComponent } from './settings/settings.component';
 import { EditpageComponent } from './editpage/editpage.component';
-import { EditorModule } from '@tinymce/tinymce-angular';
 import { ContactComponent } from './contact/contact.component';
 import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 
