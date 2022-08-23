@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.httpService.getPageData('index').subscribe((data: any) => {
       if (data.success) {
-        this.pageContent = data.result.content;
+        this.pageContent = data.result.contents;
       }
     });
     setTimeout(() => {

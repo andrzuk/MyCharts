@@ -51,7 +51,7 @@ export class EditpageComponent implements OnInit {
       if (data.success) {
         this.editorForm.setValue({
           pageId: this.routeParam,
-          editorContent: data.result.content,
+          editorContent: data.result.contents,
         });
       }
     });
