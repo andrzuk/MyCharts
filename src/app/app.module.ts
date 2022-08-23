@@ -22,6 +22,10 @@ import { SysStatsChartComponent } from './sys-stats-chart/sys-stats-chart.compon
 import { DiaStatsChartComponent } from './dia-stats-chart/dia-stats-chart.component';
 import { PulseStatsChartComponent } from './pulse-stats-chart/pulse-stats-chart.component';
 import { SettingsComponent } from './settings/settings.component';
+import { EditpageComponent } from './editpage/editpage.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { ContactComponent } from './contact/contact.component';
+import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,10 @@ import { SettingsComponent } from './settings/settings.component';
     SysStatsChartComponent,
     DiaStatsChartComponent,
     PulseStatsChartComponent,
-    SettingsComponent
+    SettingsComponent,
+    EditpageComponent,
+    ContactComponent,
+    SanitizeHtmlPipe,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +54,7 @@ import { SettingsComponent } from './settings/settings.component';
     AppRoutingModule,
     NgChartsModule,
     FontAwesomeModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

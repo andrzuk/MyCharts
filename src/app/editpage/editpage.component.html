@@ -1,0 +1,19 @@
+<div class="edit-page" *ngIf="appComponent.loggedIn">
+
+    <div class="container">
+        <form [formGroup]="editorForm" (ngSubmit)="saveClick()">
+            <input type="hidden" formControlName="pageId">
+            <editor
+                formControlName="editorContent"
+                apiKey="qvbuwr45t2l3tfpp16fpg3oemtxwnnlxpyze3myvc343875e"
+                [init]="editorInit">
+            </editor>
+            <div class="row my-4">
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary form-control" value="Zapisz">
+                </div>
+            </div>
+        </form>  
+    </div>
+    
+</div>

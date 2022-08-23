@@ -13,7 +13,7 @@
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-3">
-                                        <fa-icon [icon]="faUser" class="section"></fa-icon>
+                                        <fa-icon [icon]="faUserCheck" class="section"></fa-icon>
                                     </div>
                                     <div class="col-9">
                                         <span class="login"><b>{{ user_login }}</b></span>
@@ -68,4 +68,15 @@
 
     </div>
 
+</div>
+
+<div class="admin-page" *ngIf="!appComponent.loggedIn">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <fa-icon [icon]="faHouseLaptop" class="section"></fa-icon>
+                <div>Brak połączenia z serwerem</div>
+            </div>
+        </div>
+    </div>
 </div>

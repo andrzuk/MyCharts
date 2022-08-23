@@ -6,12 +6,13 @@ import { AppConstants } from "../app-constants";
 import { AppComponent } from "../app.component";
 
 import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import { faComputer } from '@fortawesome/free-solid-svg-icons';
 import { faNotesMedical } from '@fortawesome/free-solid-svg-icons';
 import { faListOl } from '@fortawesome/free-solid-svg-icons';
 import { faChartColumn } from '@fortawesome/free-solid-svg-icons';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faHouseLaptop } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-admin',
@@ -41,7 +42,7 @@ export class AdminComponent implements OnInit {
   }
 
   faScrewdriverWrench = faScrewdriverWrench;
-  faUser = faUser;
+  faUserCheck = faUserCheck;
   user_login = localStorage.getItem(AppConstants.userName);
   user_email = localStorage.getItem(AppConstants.userEmail);
   faComputer = faComputer;
@@ -51,4 +52,5 @@ export class AdminComponent implements OnInit {
   faListOl = faListOl;
   faChartColumn = faChartColumn;
   faCog = faCog;
+  faHouseLaptop = faHouseLaptop;
 }

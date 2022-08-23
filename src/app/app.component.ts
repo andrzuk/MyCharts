@@ -3,10 +3,13 @@ import { HttpService } from './http.service';
 import { AppConstants } from "./app-constants";
 
 import { faHeartCircleCheck } from '@fortawesome/free-solid-svg-icons';
-import { faUserNurse } from '@fortawesome/free-solid-svg-icons';
+import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faFileEdit } from '@fortawesome/free-solid-svg-icons';
+import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -61,8 +64,11 @@ export class AppComponent {
   }
 
   faHeartCircleCheck = faHeartCircleCheck;
-  faUserNurse = faUserNurse;
+  faUserCheck = faUserCheck;
   faScrewdriverWrench = faScrewdriverWrench;
   faRightToBracket = faRightToBracket;
   faRightFromBracket = faRightFromBracket;
+  faFileEdit = faFileEdit;
+  faHouseChimney = faHouseChimney;
+  faEnvelope = faEnvelope;
 }

@@ -69,4 +69,18 @@ export class HttpService {
     postData.append('token', localStorage.getItem(AppConstants.accessToken) || '');
     return this.httpClient.post<any>(AppConstants.apiURL + "/update_settings.php", postData);
   }
+
+  getPageData(page: string) {
+    return this.httpClient.get<any>(AppConstants.apiURL + "/get_page.php?id=" + page, this.httpOptions);
+  }
+
+  setPageData(formData: any) {
+    const postData = new FormData();
+    const entries = Object.entries(formData);
+    entries.forEach((entry: any) => {
+      postData.append(entry[0], entry[1]);
+    });
+    postData.append('token', localStorage.getItem(AppConstants.accessToken) || '');
+    return this.httpClient.post<any>(AppConstants.apiURL + "/update_page.php", postData);
+  }
 }
