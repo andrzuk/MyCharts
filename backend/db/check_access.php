@@ -5,7 +5,7 @@ function get_token() {
 	$token = NULL;
 
 	foreach (getallheaders() as $key => $value) {
-		if ($key == 'X-Auth-Token') {
+		if ($key == 'X-Auth-Token' || $key == 'x-auth-token') {
 			$token = $value;
 		}
 	}
