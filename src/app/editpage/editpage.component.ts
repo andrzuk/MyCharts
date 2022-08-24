@@ -25,15 +25,15 @@ export class EditpageComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private httpService: HttpService, private router: Router, public appComponent: AppComponent) { }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe(params => {
-      this.routeParam = params.get('id');
-    });
     const token = localStorage.getItem(AppConstants.accessToken);
     if (token) {
       this.httpService.getAuth().subscribe((data: any) => {
         this.appComponent.loggedIn = data.success;
         if (this.appComponent.loggedIn) {
-          this.getPageFromServer(this.routeParam);
+          this.activatedRoute.paramMap.subscribe(params => {
+            this.routeParam = params.get('id');
+            this.getPageFromServer(this.routeParam);
+          });      
         }
         else {
           this.router.navigateByUrl("/login");
