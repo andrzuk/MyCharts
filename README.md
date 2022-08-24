@@ -46,4 +46,22 @@ npm install ngx-bootstrap --save
 npm install @fortawesome/fontawesome-svg-core
 npm install @fortawesome/free-solid-svg-icons
 npm install @fortawesome/angular-fontawesome@*
+## TinyMCE
+npm install --save tinymce @tinymce/tinymce-angular
+```
+
+## Setup Application
+
+```bash
+# create and init database
+using phpMyAdmin run or import script in backend/install/database.php
+# set database connection
+complete constants DB_HOST, DB_NAME, DB_USER, DB_PASS in backend/config/config.php
+# set API url
+replace string returned by method apiURL() of class AppConstants in src/app/app-constants.ts
+# build production code
+ng build
+# deploy app to server
+copy dist/<app-name>/* files to public_html folder
+copy backend/* folders to public_html folder
 ```
