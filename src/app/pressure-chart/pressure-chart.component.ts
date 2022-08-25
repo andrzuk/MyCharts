@@ -29,8 +29,8 @@ export class PressureChartComponent implements OnInit {
         this.lastPressureData = this.pressureData.slice(0, this.appComponent.getSetting('present_data_limit'));
         this.lastPressureData.forEach((item: any) => {
           this.pressChartData.labels?.push(item.id);
-          this.pressChartData.datasets[0].data.push(item.sys);
-          this.pressChartData.datasets[1].data.push(item.dia);
+          this.pressChartData.datasets[0].data.push(parseInt(item.sys));
+          this.pressChartData.datasets[1].data.push(parseInt(item.dia));
         });
         this.pressChartData.labels?.reverse();
         this.pressChartData.datasets[0].data.reverse();
@@ -79,7 +79,7 @@ export class PressureChartComponent implements OnInit {
       y: {
         position: 'left',
         beginAtZero: true,
-        max: parseInt(this.appComponent.getSetting('pressure_axis_max') || ''),
+        max: parseInt(this.appComponent.getSetting('pressure_axis_max') || '300'),
         grid: {
           color: 'rgba(100, 100, 100, 0.3)',
         },

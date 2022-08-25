@@ -37,6 +37,14 @@ CREATE TABLE `pages` (
   `modified` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Zrzut danych tabeli `pages`
+--
+
+INSERT INTO `pages` (`id`, `title`, `contents`, `description`, `visible`, `modified`) VALUES
+(1, 'index', '<h1 style=\"color: #c00; margin-bottom: 1.2em;\">Moje pomiary</h1>', 'index', 1, '2022-08-24 14:31:02'),
+(2, 'contact', 'e-mail: <b>andrzuk@wp.pl</b>', 'contact', 1, '2022-08-24 14:32:14');
+
 -- --------------------------------------------------------
 
 --
@@ -158,7 +166,7 @@ ALTER TABLE `_pressure`
 -- AUTO_INCREMENT dla tabeli `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `settings`

@@ -29,7 +29,7 @@ export class PulseChartComponent implements OnInit {
         this.lastPulseData = this.pulseData.slice(0, this.appComponent.getSetting('present_data_limit'));
         this.lastPulseData.forEach((item: any) => {
           this.pulseChartData.labels?.push(item.id);
-          this.pulseChartData.datasets[0].data.push(item.pulse);
+          this.pulseChartData.datasets[0].data.push(parseInt(item.pulse));
         });
         this.pulseChartData.labels?.reverse();
         this.pulseChartData.datasets[0].data.reverse();
@@ -66,7 +66,7 @@ export class PulseChartComponent implements OnInit {
       y: {
         position: 'left',
         beginAtZero: true,
-        max: parseInt(this.appComponent.getSetting('pulse_axis_max') || ''),
+        max: parseInt(this.appComponent.getSetting('pulse_axis_max') || '160'),
         grid: {
           color: 'rgba(100, 100, 100, 0.3)',
         },
