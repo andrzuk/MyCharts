@@ -40,9 +40,8 @@ export class ExportComponent implements OnInit {
     this.httpService.getPressureData().subscribe((data: any) => {
       if (data.success) {
         this.pressureData = data.result;
-        this.pressureData.reverse();
         this.pressureStream += 'INSERT INTO `_pressure` (`id`, `season`, `sys`, `dia`, `pulse`) VALUES\n';
-        this.pressureData.forEach((item: any) => {
+        this.pressureData.reverse().forEach((item: any) => {
           this.pressureStream += '(' + item.id + ', \'' + item.season + '\', ' + item.sys + ', ' + item.dia + ', ' + item.pulse + '),\n';
         });
         this.pressureStream = this.pressureStream.slice(0, -2) + ';\n';
@@ -55,5 +54,6 @@ export class ExportComponent implements OnInit {
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(this.pressureStream));
     element.setAttribute('download', 'pressure-dump.sql');
     element.click();
+    this.router.navigateByUrl("/admin");
   }
 }
