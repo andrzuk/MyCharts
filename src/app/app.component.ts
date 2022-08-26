@@ -7,6 +7,7 @@ import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { faFileEdit } from '@fortawesome/free-solid-svg-icons';
 import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -68,6 +69,7 @@ export class AppComponent {
   faScrewdriverWrench = faScrewdriverWrench;
   faRightToBracket = faRightToBracket;
   faRightFromBracket = faRightFromBracket;
+  faDownload = faDownload;
   faFileEdit = faFileEdit;
   faHouseChimney = faHouseChimney;
   faEnvelope = faEnvelope;

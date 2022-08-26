@@ -11,6 +11,8 @@
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownCMS">
             <li><a class="dropdown-item" routerLink="/editpage/index"><fa-icon [icon]="faHouseChimney" class="label"></fa-icon>Index</a></li>
             <li><a class="dropdown-item" routerLink="/editpage/contact"><fa-icon [icon]="faEnvelope" class="label"></fa-icon>Contact</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" routerLink="/export"><fa-icon [icon]="faDownload" class="label"></fa-icon>Eksportuj wyniki</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown" *ngIf="loggedIn">

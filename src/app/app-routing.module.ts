@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SettingsComponent } from './settings/settings.component';
 import { EditpageComponent } from './editpage/editpage.component';
+import { ExportComponent } from './export/export.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: "list", component: ListComponent },
   { path: "logout", component: LogoutComponent },
   { path: "settings", component: SettingsComponent },
+  { path: "export", component: ExportComponent },
   { path: "editpage/:id", component: EditpageComponent },
   { path: "**", component: HomeComponent },
 ];

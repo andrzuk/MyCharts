@@ -26,6 +26,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { EditpageComponent } from './editpage/editpage.component';
 import { ContactComponent } from './contact/contact.component';
 import { SanitizeHtmlPipe } from './sanitize-html.pipe';
+import { ExportComponent } from './export/export.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { SanitizeHtmlPipe } from './sanitize-html.pipe';
     EditpageComponent,
     ContactComponent,
     SanitizeHtmlPipe,
+    ExportComponent,
   ],
   imports: [
     BrowserModule,
