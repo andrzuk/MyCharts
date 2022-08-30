@@ -15,12 +15,16 @@ export class EditpageComponent implements OnInit {
 
   routeParam: any;
   editorInit: any = { 
-    plugins: 'lists link image table code help wordcount' 
+    plugins: 'lists link image table code help wordcount',
+    width: 'auto',
+    height: 400, 
   };
   editorForm = new FormGroup({
     pageId: new FormControl(''),
     editorContent: new FormControl(''),
   });
+  message: string = '';
+  type: string = '';
 
   constructor(private activatedRoute: ActivatedRoute, private httpService: HttpService, private router: Router, public appComponent: AppComponent) { }
 
@@ -33,6 +37,7 @@ export class EditpageComponent implements OnInit {
           this.activatedRoute.paramMap.subscribe(params => {
             this.routeParam = params.get('id');
             this.getPageFromServer(this.routeParam);
+            this.message = '';
           });      
         }
         else {
@@ -59,9 +64,9 @@ export class EditpageComponent implements OnInit {
 
   saveClick() {
     this.httpService.setPageData(this.editorForm.value).subscribe((data: any) => {
-      if (data.success) {
-        this.router.navigateByUrl("/");
-      }
+      this.message = data.message;
+      this.type = data.success ? 'success' : 'error';
+      this.getPageFromServer(this.routeParam);
     });
   }
 }
