@@ -1,4 +1,4 @@
-<div class="edit-page" *ngIf="appComponent.loggedIn">
+<ng-container *ngIf="appComponent.loggedIn">
 
     <div class="container">
         <form [formGroup]="editorForm" (ngSubmit)="saveClick()">
@@ -21,4 +21,4 @@
         </form>  
     </div>
     
-</div>
+</ng-container>
