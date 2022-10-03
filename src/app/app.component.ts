@@ -27,7 +27,7 @@ export class AppComponent {
   constructor(private httpService: HttpService) {}
 
   ngOnInit() {
-    this.httpService.getSettings().subscribe((data: any) => {
+    this.httpService.getSettingsData().subscribe((data: any) => {
       this.settings = data.result;
       this.title = this.getSetting('app_title') || 'MyCharts';
     });

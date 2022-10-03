@@ -88,7 +88,7 @@ export class SettingsComponent implements OnInit {
       this.message = data.message;
       this.type = data.success ? 'success' : 'error';
       if (data.success) {
-        this.httpService.getSettings().subscribe((data: any) => {
+        this.httpService.getSettingsData().subscribe((data: any) => {
           this.appComponent.settings = data.result;
         });  
         this.router.navigateByUrl("/admin");

@@ -23,12 +23,6 @@ export class HttpService {
     return this.httpClient.get<any>(AppConstants.apiURL + "/check_auth.php", this.httpOptions);
   }
 
-  getSettings() {
-    const token = localStorage.getItem(AppConstants.accessToken) || '';
-    this.httpOptions.headers = this.httpOptions.headers.set(AppConstants.tokenHeader, token);
-    return this.httpClient.get<any>(AppConstants.apiURL + "/get_settings.php", this.httpOptions);
-  }
-
   signIn(formData: any) {
     const postData = new FormData();
     const entries = Object.entries(formData);

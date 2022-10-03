@@ -5,31 +5,22 @@ header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Headers: Content-Type, X-Auth-Token");
 
 include dirname(__FILE__) . '/../db/connection.php';
-include dirname(__FILE__) . '/../db/check_access.php';
-
-$token = get_token();
 
 $result = array();
 $success = FALSE;
 
-if (!empty($token)) {
-	
-	$db_connection = connect();
+$db_connection = connect();
 
-	if (check_access($token, array(ADMIN, OPERATOR, USER), $db_connection)) {
-		
-		$query = 'SELECT * FROM settings' .
-		'         ORDER BY id';
+$query = 'SELECT * FROM settings' .
+'         ORDER BY id';
 
-		$statement = $db_connection->prepare($query);
+$statement = $db_connection->prepare($query);
 
-		$statement->execute();
-		
-		$result = $statement->fetchAll(PDO::FETCH_ASSOC);
-		
-		$success = TRUE;
-	}
-}
+$statement->execute();
+
+$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+$success = TRUE;
 
 echo json_encode (
 	array (
