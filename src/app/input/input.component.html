@@ -47,10 +47,14 @@
                                 <label for="season">Pora:</label>
                             </div>
                             <div class="col-8">
-                                <select class="form-select" id="season" formControlName="season">
-                                    <option value="R">Rano</option>
-                                    <option value="W">Wieczór</option>
-                                </select>
+                                <div class="form-check" style="display: inline-block; padding: 0 1.5em 0 1.5em;">
+                                    <input type="radio" formControlName="season" id="season-R" class="form-check-input" value="R">
+                                    <label for="season-R" class="form-check-label">Rano</label>
+                                </div>
+                                <div class="form-check" style="display: inline-block; padding: 0 0 0.5em 1.5em;">
+                                    <input type="radio" formControlName="season" id="season-W" class="form-check-input" value="W">
+                                    <label for="season-W" class="form-check-label">Wieczór</label>
+                                </div>
                             </div>
                         </div>
                         <div class="my-2 row">
