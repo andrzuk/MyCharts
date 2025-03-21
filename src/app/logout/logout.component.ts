@@ -12,7 +12,7 @@ import { AppConstants } from "../app-constants";
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private router: Router, public appComponent: AppComponent) { }
+  constructor(private httpService: HttpService, private router: Router, private appComponent: AppComponent) { }
 
   ngOnInit(): void {
     this.logOut();
@@ -33,6 +33,7 @@ export class LogoutComponent implements OnInit {
     localStorage.removeItem(AppConstants.accessToken);
     localStorage.removeItem(AppConstants.userName);
     localStorage.removeItem(AppConstants.userEmail);
+    localStorage.removeItem(AppConstants.userStatus);
     localStorage.removeItem(AppConstants.loggedIn);
     localStorage.removeItem(AppConstants.loggedOut);
     this.router.navigateByUrl("/");

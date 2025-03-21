@@ -16,7 +16,7 @@ export class PressureChartComponent implements OnInit {
   pressureData: any = [];
   lastPressureData: any = [];
 
-  constructor(private httpService: HttpService, public appComponent: AppComponent) { }
+  constructor(private httpService: HttpService, private appComponent: AppComponent) { }
 
   ngOnInit(): void {
     this.getDataFromServer();

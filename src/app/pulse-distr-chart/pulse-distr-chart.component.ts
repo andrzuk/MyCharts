@@ -5,16 +5,17 @@ import { AppComponent } from '../app.component';
 import { HttpService } from "../http.service";
 
 @Component({
-  selector: 'app-pulse-chart',
-  templateUrl: './pulse-chart.component.html',
-  styleUrls: ['./pulse-chart.component.scss']
+  selector: 'app-pulse-distr-chart',
+  templateUrl: './pulse-distr-chart.component.html',
+  styleUrls: ['./pulse-distr-chart.component.scss']
 })
-export class PulseChartComponent implements OnInit {
+export class PulseDistrChartComponent implements OnInit {
 
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 
   pulseData: any = [];
   lastPulseData: any = [];
+  distrData: any = [];
 
   constructor(private httpService: HttpService, private appComponent: AppComponent) { }
 
@@ -28,11 +29,17 @@ export class PulseChartComponent implements OnInit {
         this.pulseData = data.result;
         this.lastPulseData = this.pulseData.slice(0, this.appComponent.getSetting('present_data_limit'));
         this.lastPulseData.forEach((item: any) => {
-          this.pulseChartData.labels?.push(item.id);
-          this.pulseChartData.datasets[0].data.push(parseInt(item.pulse));
+          this.distrData[parseInt(item.pulse)] = 0;
         });
-        this.pulseChartData.labels?.reverse();
-        this.pulseChartData.datasets[0].data.reverse();
+        this.lastPulseData.forEach((item: any) => {
+          this.distrData[parseInt(item.pulse)]++;
+        });
+        for (var i = 0; i < this.distrData.length; i++) {
+          if (this.distrData[i]) {
+            this.pulseChartData.labels?.push(i);
+            this.pulseChartData.datasets[0].data.push(this.distrData[i]);
+          }
+        }
         this.chart?.update();
       }
     });
@@ -43,7 +50,7 @@ export class PulseChartComponent implements OnInit {
       {
         data: [],
         label: 'Pulse',
-        backgroundColor: 'rgba(0, 160, 0, 0.2)',
+        backgroundColor: 'rgba(0, 160, 0, 1)',
         borderColor: 'rgba(0, 160, 0, 1)',
         pointBackgroundColor: 'rgba(0, 160, 0, 1)',
         pointBorderColor: 'rgba(255, 255, 255, 1)',
@@ -66,7 +73,6 @@ export class PulseChartComponent implements OnInit {
       y: {
         position: 'left',
         beginAtZero: true,
-        max: parseInt(this.appComponent.getSetting('pulse_axis_max') || '160'),
         grid: {
           color: 'rgba(100, 100, 100, 0.3)',
         },
@@ -81,5 +87,5 @@ export class PulseChartComponent implements OnInit {
     }
   };
 
-  public pulseChartType: ChartType = 'line';
+  public pulseChartType: ChartType = 'bar';
 }

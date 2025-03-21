@@ -26,6 +26,7 @@ export class ListComponent implements OnInit {
         this.appComponent.loggedIn = data.success;
         if (this.appComponent.loggedIn) {
           this.getDataFromServer();
+          window.history.pushState({}, '', this.appComponent.rootURL);
         }
         else {
           this.router.navigateByUrl("/login");

@@ -1,40 +1,19 @@
 <!-- Responsive navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar bg-light">
   <div class="container">
     <a class="navbar-brand" routerLink="/"><fa-icon [icon]="faHeartCircleCheck" class="label"></fa-icon>{{ title }}</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" routerLink="/login" *ngIf="!loggedIn"><fa-icon [icon]="faRightToBracket" class="label"></fa-icon>Zaloguj</a></li>
-        <li class="nav-item dropdown" *ngIf="loggedIn">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownCMS" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><fa-icon [icon]="faFileEdit" class="label"></fa-icon>CMS</a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownCMS">
-            <li><a class="dropdown-item" routerLink="/editpage/index"><fa-icon [icon]="faHouseChimney" class="label"></fa-icon>Index</a></li>
-            <li><a class="dropdown-item" routerLink="/editpage/contact"><fa-icon [icon]="faEnvelope" class="label"></fa-icon>Contact</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" routerLink="/export"><fa-icon [icon]="faDownload" class="label"></fa-icon>Eksportuj wyniki</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown" *ngIf="loggedIn">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownUser" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><fa-icon [icon]="faUserCheck" class="label"></fa-icon>{{ user.name.toUpperCase() }}</a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
-            <li><a class="dropdown-item" routerLink="/admin"><fa-icon [icon]="faScrewdriverWrench" class="label"></fa-icon>Admin Panel</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" routerLink="/logout"><fa-icon [icon]="faRightFromBracket" class="label"></fa-icon>Wyloguj</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" routerLink="/contact" *ngIf="!loggedIn"><fa-icon [icon]="faEnvelope" class="label"></fa-icon>Kontakt</a></li>
-      </ul>
-    </div>
+    <a class="nav-link" routerLink="/login" *ngIf="!loggedIn"><fa-icon [icon]="faRightToBracket" class="label"></fa-icon></a>
+    <a class="nav-link ms-auto mx-2" routerLink="/admin" *ngIf="loggedIn"><fa-icon [icon]="faScrewdriverWrench" class="label"></fa-icon></a>
+    <a class="nav-link" routerLink="/logout" *ngIf="loggedIn"><fa-icon [icon]="faRightFromBracket" class="label"></fa-icon></a>
   </div>
 </nav>
 <!-- Page content-->
-<div class="container">
+<div class="main container">
   <div class="text-center mt-5">
     <router-outlet></router-outlet>
   </div>
 </div>
 <!-- Page footer-->
 <div class="footer">
-  &copy; 2022 {{ title }} by <a href="https://github.com/andrzuk/MyCharts" target="_blank">Andreas</a>
+  &copy; 2025 {{ title }} by <a href="https://github.com/PrivateAccount/PressureAdmin" target="_blank">Andreas</a>
 </div>

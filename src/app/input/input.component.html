@@ -9,10 +9,10 @@
                         <h5 class="card-title"><fa-icon [icon]="faListOl" class="label"></fa-icon>Ostatnie</h5>
                     </div>
                     <div class="card-body">
-                        <table class="table table-hover">
+                        <table class="table table-hover table-sm">
                             <thead>
                                 <tr>
-                                  <th scope="col">Id</th>
+                                  <th scope="col">Dzień</th>
                                   <th scope="col">Pora</th>
                                   <th scope="col">SYS</th>
                                   <th scope="col">DIA</th>
@@ -21,7 +21,7 @@
                               </thead>
                               <tbody>
                                 <tr *ngFor="let item of lastData">
-                                  <th scope="row">{{ item.id }}</th>
+                                  <td>{{ item.modified | slice: 2 : 10 }}</td>
                                   <td>{{ item.season }}</td>
                                   <td>{{ item.sys }}</td>
                                   <td>{{ item.dia }}</td>
@@ -62,7 +62,7 @@
                                 <label for="sys">SYS:</label>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="form-control" id="sys" formControlName="sys">
+                                <input type="number" class="form-control" id="sys" formControlName="sys" min="0" max="300">
                             </div>
                         </div>
                         <div class="my-2 row">
@@ -70,7 +70,7 @@
                                 <label for="dia">DIA:</label>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="form-control" id="dia" formControlName="dia">
+                                <input type="number" class="form-control" id="dia" formControlName="dia" min="0" max="200">
                             </div>
                         </div>
                         <div class="my-2 row">
@@ -78,7 +78,7 @@
                                 <label for="pulse">Pulse:</label>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="form-control" id="pulse" formControlName="pulse">
+                                <input type="number" class="form-control" id="pulse" formControlName="pulse" min="0" max="200">
                             </div>
                         </div>
                         <div class="my-4 row">

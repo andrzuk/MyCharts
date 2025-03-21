@@ -16,7 +16,7 @@
                                         <fa-icon [icon]="faUserCheck" class="section"></fa-icon>
                                     </div>
                                     <div class="col-9">
-                                        <span class="login"><b>{{ user_login }}</b></span>
+                                        <span class="login"><b>{{ user_login }}</b> &nbsp; (<b>{{ user_profile }}</b>)</span>
                                         <span class="email"><b>{{ user_email }}</b></span>
                                     </div>
                                 </div>
@@ -68,15 +68,4 @@
 
     </div>
 
-</ng-container>
-
-<ng-container *ngIf="!appComponent.loggedIn">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <fa-icon [icon]="faHouseLaptop" class="section"></fa-icon>
-                <div>Brak połączenia z serwerem</div>
-            </div>
-        </div>
-    </div>
 </ng-container>

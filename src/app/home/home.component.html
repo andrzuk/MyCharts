@@ -1,4 +1,8 @@
 <div class="container">
-    <fa-icon [icon]="faHeartPulse"></fa-icon>
+    <a routerLink="/admin">
+        <fa-icon [icon]="faHeartPulse"></fa-icon>
+        <fa-icon [icon]="faArrowRight"></fa-icon>
+        <fa-icon [icon]="faDatabase"></fa-icon>
+    </a>
     <div [innerHTML]="pageContent | sanitizeHtml"></div>
 </div>

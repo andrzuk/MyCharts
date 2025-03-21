@@ -7,6 +7,7 @@ header("Access-Control-Allow-Headers: Content-Type");
 include dirname(__FILE__) . '/../db/connection.php';
 
 $id = 0;
+$status = 0;
 $token = NULL;
 $success = FALSE;
 $message = NULL;
@@ -42,6 +43,7 @@ if (!empty($login) && !empty($password)) {
 			$id = $row_item['id'];
 			$login = $row_item['login'];
 			$email = $row_item['email'];
+			$status = $row_item['status'];
 			$logged_in = $row_item['logged_in'];
 			$logged_out = $row_item['logged_out'];
 			$token = hash('sha256', uniqid());
@@ -74,6 +76,7 @@ echo json_encode (
 			'id' => $id, 
 			'name' => $login, 
 			'email' => $email, 
+			'status' => $status, 
 			'logged_in' => $logged_in, 
 			'logged_out' => $logged_out, 
 			'access_token' => $token, 

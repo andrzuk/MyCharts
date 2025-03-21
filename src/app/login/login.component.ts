@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
           setTimeout(() => {
             document.getElementById('email')?.focus();
           }, AppConstants.focusDelay);
+          window.history.pushState({}, '', this.appComponent.rootURL);
         }
       });
     }
@@ -43,6 +44,7 @@ export class LoginComponent implements OnInit {
       setTimeout(() => {
         document.getElementById('email')?.focus();
       }, AppConstants.focusDelay);
+      window.history.pushState({}, '', this.appComponent.rootURL);
     }
   }
 
@@ -54,6 +56,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem(AppConstants.accessToken, data.user.access_token);
         localStorage.setItem(AppConstants.userName, data.user.name);
         localStorage.setItem(AppConstants.userEmail, data.user.email);
+        localStorage.setItem(AppConstants.userStatus, data.user.status);
         localStorage.setItem(AppConstants.loggedIn, data.user.logged_in);
         localStorage.setItem(AppConstants.loggedOut, data.user.logged_out);
         this.router.navigateByUrl("/admin");
@@ -64,6 +67,7 @@ export class LoginComponent implements OnInit {
         localStorage.removeItem(AppConstants.accessToken);
         localStorage.removeItem(AppConstants.userName);
         localStorage.removeItem(AppConstants.userEmail);
+        localStorage.removeItem(AppConstants.userStatus);
         localStorage.removeItem(AppConstants.loggedIn);
         localStorage.removeItem(AppConstants.loggedOut);
         this.message = data.message;

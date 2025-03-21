@@ -4,4 +4,17 @@ h5.card-title {
 
 fa-icon.label {
     margin-right: 1em;
+    color: #666;
+}
+
+fa-icon.label:hover {
+    color: #c00;
+}
+
+a.navbar-brand {
+    color: #666;
+}
+
+a.navbar-brand:hover {
+    color: #c00;
 }

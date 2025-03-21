@@ -29,6 +29,7 @@ export class AdminComponent implements OnInit {
       this.httpService.getAuth().subscribe((data: any) => {
         this.appComponent.loggedIn = data.success;
         if (this.appComponent.loggedIn) {
+          window.history.pushState({}, '', this.appComponent.rootURL);
         }
         else {
           this.router.navigateByUrl("/login");
@@ -45,6 +46,8 @@ export class AdminComponent implements OnInit {
   faUserCheck = faUserCheck;
   user_login = localStorage.getItem(AppConstants.userName);
   user_email = localStorage.getItem(AppConstants.userEmail);
+  user_status = localStorage.getItem(AppConstants.userStatus);
+  user_profile = this.user_status == '1' ? 'ADMIN' : (this.user_status == '2' ? 'OPERATOR' : (this.user_status == '3' ? 'USER' : 'GUEST'));
   faComputer = faComputer;
   logged_in = localStorage.getItem(AppConstants.loggedIn);
   logged_out = localStorage.getItem(AppConstants.loggedOut);

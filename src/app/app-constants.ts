@@ -1,6 +1,9 @@
 export class AppConstants {
     public static get apiURL(): string {
-      return "http://my-booking.cba.pl/api";
+      return "http://fast-cms.pl/api";
+    }
+    public static get rootURL(): string {
+      return "/pressure";
     }
     public static get tokenHeader(): string {
       return "X-Auth-Token";
@@ -13,6 +16,9 @@ export class AppConstants {
     }
     public static get userEmail(): string {
       return "MyPressureUserEmail";
+    }
+    public static get userStatus(): string {
+      return "MyPressureUserStatus";
     }
     public static get loggedIn(): string {
       return "MyPressureLoggedIn";

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Czas generowania: 31 Lip 2022, 14:24
--- Wersja serwera: 10.5.15-MariaDB-10+deb11u1
--- Wersja PHP: 7.1.33
+-- Host: localhost
+-- Generation Time: Wrz 18, 2024 at 08:43 AM
+-- Wersja serwera: 10.6.18-MariaDB-cll-lve
+-- Wersja PHP: 8.2.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `myCharts`
+-- Database: `pressure`
 --
 
 -- --------------------------------------------------------
@@ -35,15 +34,15 @@ CREATE TABLE `pages` (
   `description` varchar(1024) DEFAULT NULL,
   `visible` tinyint(1) NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Zrzut danych tabeli `pages`
+-- Dumping data for table `pages`
 --
 
 INSERT INTO `pages` (`id`, `title`, `contents`, `description`, `visible`, `modified`) VALUES
-(1, 'index', '<h1 style=\"color: #c00; margin-bottom: 1.2em;\">Moje pomiary</h1>', 'index', 1, '2022-08-24 14:31:02'),
-(2, 'contact', 'e-mail: <b>andrzuk@wp.pl</b>', 'contact', 1, '2022-08-24 14:32:14');
+(1, 'index', '<h3 style=\"color: #c00;\">Moje wyniki</h3>', 'index', 1, '2022-08-24 09:41:23'),
+(2, 'contact', '<p>e-mail:&nbsp;<strong>andrzuk@wp.pl</strong></p>', 'contact', 1, '2022-08-24 08:38:41');
 
 -- --------------------------------------------------------
 
@@ -57,25 +56,25 @@ CREATE TABLE `settings` (
   `key_value` varchar(1024) NOT NULL,
   `meaning` varchar(128) DEFAULT NULL,
   `modified` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Zrzut danych tabeli `settings`
+-- Dumping data for table `settings`
 --
 
 INSERT INTO `settings` (`id`, `key_name`, `key_value`, `meaning`, `modified`) VALUES
-(1, 'app_title', 'MyCharts', 'tytuł aplikacji', '2022-07-29 12:17:04'),
-(2, 'app_logo', 'faHome', 'ikona przed tytułem aplikacji', '2022-07-29 12:21:30'),
-(3, 'last_values_limit', '4', 'limit listy ostatnich wartości', '2022-07-29 12:24:40'),
-(4, 'present_data_limit', '40', 'limit danych na liście i wykresach', '2022-07-29 12:27:24'),
-(5, 'sys_border_high', '130', 'górna granica dla SYS', '2022-07-29 12:29:23'),
-(6, 'sys_border_low', '110', 'dolna granica dla SYS', '2022-07-29 12:29:23'),
-(7, 'dia_border_high', '90', 'górna granica dla DIA', '2022-07-29 12:32:45'),
-(8, 'dia_border_low', '70', 'dolna granica dla DIA', '2022-07-29 12:32:45'),
-(9, 'pulse_border_high', '80', 'górna granica dla Pulse', '2022-07-29 12:34:21'),
-(10, 'pulse_border_low', '60', 'dolna granica dla Pulse', '2022-07-29 12:34:21'),
-(11, 'pressure_axis_max', '200', 'wartość max dla wykresu SYS i DIA', '2022-08-03 13:49:49'),
-(12, 'pulse_axis_max', '140', 'wartość max dla wykresu Pulse', '2022-08-03 13:49:49');
+(1, 'app_title', 'My Pressure', 'tytuł aplikacji', '2024-08-26 11:47:22'),
+(2, 'app_logo', 'faHome', 'ikona przed tytułem aplikacji', '2024-08-26 11:47:22'),
+(3, 'last_values_limit', '1', 'limit listy ostatnich wartości', '2024-08-26 11:47:22'),
+(4, 'present_data_limit', '30', 'limit danych na liście i wykresach', '2024-08-26 11:47:22'),
+(5, 'sys_border_high', '170', 'górna granica dla SYS', '2024-08-26 11:47:22'),
+(6, 'sys_border_low', '140', 'dolna granica dla SYS', '2024-08-26 11:47:22'),
+(7, 'dia_border_high', '100', 'górna granica dla DIA', '2024-08-26 11:47:22'),
+(8, 'dia_border_low', '90', 'dolna granica dla DIA', '2024-08-26 11:47:22'),
+(9, 'pulse_border_high', '70', 'górna granica dla Pulse', '2024-08-26 11:47:22'),
+(10, 'pulse_border_low', '60', 'dolna granica dla Pulse', '2024-08-26 11:47:22'),
+(11, 'pressure_axis_max', '250', 'wartość max dla wykresu SYS i DIA', '2024-08-26 11:47:22'),
+(12, 'pulse_axis_max', '120', 'wartość max dla wykresu Pulse', '2024-08-26 11:47:22');
 
 -- --------------------------------------------------------
 
@@ -94,14 +93,14 @@ CREATE TABLE `users` (
   `logged_out` datetime NOT NULL,
   `active` tinyint(1) NOT NULL,
   `token` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Zrzut danych tabeli `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `login`, `password`, `email`, `status`, `logged_in`, `modified`, `logged_out`, `active`, `token`) VALUES
-(1, 'demo', '89e495e7941cf9e40e6980d14a16bf023ccd4c91', 'demo@github.com', 1, '2022-08-03 09:19:44', '2022-08-03 08:53:24', '2022-08-03 09:24:20', 1, '');
+(1, 'demo', '', 'demo@gmail.com', 4, '2022-08-24 15:21:26', '2022-08-03 08:53:24', '2022-08-03 09:24:20', 1, '');
 
 -- --------------------------------------------------------
 
@@ -114,18 +113,9 @@ CREATE TABLE `_pressure` (
   `season` enum('R','W') NOT NULL,
   `sys` int(11) NOT NULL,
   `dia` int(11) NOT NULL,
-  `pulse` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Zrzut danych tabeli `_pressure`
---
-
-INSERT INTO `_pressure` (`id`, `season`, `sys`, `dia`, `pulse`) VALUES
-(1, 'R', 120, 80, 76),
-(2, 'W', 122, 85, 71),
-(3, 'R', 119, 81, 70),
-(4, 'W', 127, 90, 80);
+  `pulse` int(11) NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- Indeksy dla zrzutów tabel
@@ -159,32 +149,32 @@ ALTER TABLE `_pressure`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT dla zrzuconych tabel
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT dla tabeli `pages`
+-- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT dla tabeli `settings`
+-- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT dla tabeli `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT dla tabeli `_pressure`
+-- AUTO_INCREMENT for table `_pressure`
 --
 ALTER TABLE `_pressure`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

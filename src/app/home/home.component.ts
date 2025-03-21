@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { HttpService } from "../http.service";
 
-import { AppConstants } from "../app-constants";
-
 import { faHeartPulse } from '@fortawesome/free-solid-svg-icons';
+import { faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -23,10 +23,9 @@ export class HomeComponent implements OnInit {
         this.pageContent = data.result.contents;
       }
     });
-    setTimeout(() => {
-      this.router.navigateByUrl("/admin");
-    }, AppConstants.routeDelay);
   }
 
   faHeartPulse = faHeartPulse;
+  faDatabase = faDatabase;
+  faArrowRight = faArrowRight;
 }

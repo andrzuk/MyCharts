@@ -23,7 +23,7 @@ export class SysStatsChartComponent implements OnInit {
   valuesSum = 0;
   valuesAverage = 0;
 
-  constructor(private httpService: HttpService, public appComponent: AppComponent) { }
+  constructor(private httpService: HttpService, private appComponent: AppComponent) { }
 
   ngOnInit(): void {
     this.getDataFromServer();
@@ -68,7 +68,7 @@ export class SysStatsChartComponent implements OnInit {
   };
 
   public sysStatsChartData: ChartData<'pie', number[], string | string[]> = {
-    labels: ['niskie', 'średnie', 'wysokie'],
+    labels: ['L', 'M', 'H'],
     datasets: [{
       data: [], 
       backgroundColor: ['rgba(0, 160, 0, 1)', 'rgba(240, 160, 0, 1)', 'rgba(220, 0, 0, 1)'],

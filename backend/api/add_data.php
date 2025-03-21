@@ -22,8 +22,8 @@ if (!empty($season) && !empty($sys) && !empty($dia) && !empty($pulse) && !empty(
 	
 	if (check_access($token, array(ADMIN, OPERATOR), $db_connection)) {
 
-		$query = 'INSERT INTO _pressure (season, sys, dia, pulse)' .
-		'         VALUES (:season, :sys, :dia, :pulse)';
+		$query = 'INSERT INTO _pressure (season, sys, dia, pulse, modified)' .
+		'         VALUES (:season, :sys, :dia, :pulse, NOW())';
 
 		$statement = $db_connection->prepare($query);
 		$statement->bindParam(':season', $season, PDO::PARAM_STR);

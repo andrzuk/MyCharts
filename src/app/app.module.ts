@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 
 import { NgChartsModule } from 'ng2-charts';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { EditorModule } from '@tinymce/tinymce-angular';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -23,10 +22,11 @@ import { SysStatsChartComponent } from './sys-stats-chart/sys-stats-chart.compon
 import { DiaStatsChartComponent } from './dia-stats-chart/dia-stats-chart.component';
 import { PulseStatsChartComponent } from './pulse-stats-chart/pulse-stats-chart.component';
 import { SettingsComponent } from './settings/settings.component';
-import { EditpageComponent } from './editpage/editpage.component';
 import { ContactComponent } from './contact/contact.component';
 import { SanitizeHtmlPipe } from './sanitize-html.pipe';
-import { ExportComponent } from './export/export.component';
+import { SysDistrChartComponent } from './sys-distr-chart/sys-distr-chart.component';
+import { DiaDistrChartComponent } from './dia-distr-chart/dia-distr-chart.component';
+import { PulseDistrChartComponent } from './pulse-distr-chart/pulse-distr-chart.component';
 
 @NgModule({
   declarations: [
@@ -44,10 +44,11 @@ import { ExportComponent } from './export/export.component';
     DiaStatsChartComponent,
     PulseStatsChartComponent,
     SettingsComponent,
-    EditpageComponent,
     ContactComponent,
     SanitizeHtmlPipe,
-    ExportComponent,
+    SysDistrChartComponent,
+    DiaDistrChartComponent,
+    PulseDistrChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,8 +56,7 @@ import { ExportComponent } from './export/export.component';
     HttpClientModule,
     AppRoutingModule,
     NgChartsModule,
-    FontAwesomeModule,
-    EditorModule
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

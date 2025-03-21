@@ -26,6 +26,7 @@ export class InputComponent implements OnInit {
   message: any = '';
   type: string = '';
   lastData: any = [];
+  currentSeason: string = '';
   
   constructor(private httpService: HttpService, private router: Router, public appComponent: AppComponent) { }
 
@@ -36,6 +37,9 @@ export class InputComponent implements OnInit {
         this.appComponent.loggedIn = data.success;
         if (this.appComponent.loggedIn) {
           this.getDataFromServer();
+          this.currentSeason = new Date().getHours() < 12 ? 'R' : 'W';
+          this.inputForm.setValue({ season: this.currentSeason, sys: '', dia: '', pulse: '' });
+          window.history.pushState({}, '', this.appComponent.rootURL);
         }
         else {
           this.router.navigateByUrl("/login");
@@ -55,16 +59,17 @@ export class InputComponent implements OnInit {
         this.lastData = this.pressureData.slice(0, this.appComponent.getSetting('last_values_limit'));
       }
     });
-    document.getElementById('season')?.focus();
   }
 
   inputClick() {
     this.httpService.setPressureData(this.inputForm.value).subscribe((data: any) => {
       this.message = data.message;
       this.type = data.success ? 'success' : 'error';
-      this.getDataFromServer();
+      if (data.success) {
+        this.getDataFromServer();
+        this.inputForm.setValue({ season: '', sys: '', dia: '', pulse: '' });
+      }
     });
-    this.inputForm.setValue({ season: '', sys: '', dia: '', pulse: '' });
   }
 
   faListOl = faListOl;

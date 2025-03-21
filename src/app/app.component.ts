@@ -23,17 +23,22 @@ export class AppComponent {
   user: any;
   loggedIn: any;
   settings: any;
+  rootURL: string;
 
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService) {
+    this.title = 'MyPressAdmin';
+    this.rootURL = AppConstants.rootURL;
+  }
 
   ngOnInit() {
     this.httpService.getSettingsData().subscribe((data: any) => {
       this.settings = data.result;
-      this.title = this.getSetting('app_title') || 'MyCharts';
+      this.title = this.getSetting('app_title');
     });
     this.user = {
       name: localStorage.getItem(AppConstants.userName),
       email: localStorage.getItem(AppConstants.userEmail),
+      status: localStorage.getItem(AppConstants.userStatus),
       logged_in: localStorage.getItem(AppConstants.loggedIn), 
       logged_out: localStorage.getItem(AppConstants.loggedOut) 
     };

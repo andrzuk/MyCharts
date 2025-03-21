@@ -12,7 +12,7 @@ import { AppComponent } from "../app.component";
 })
 export class ChartsComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private router: Router, public appComponent: AppComponent) { }
+  constructor(private httpService: HttpService, private router: Router, private appComponent: AppComponent) { }
 
   ngOnInit(): void {
     const token = localStorage.getItem(AppConstants.accessToken);
@@ -20,6 +20,7 @@ export class ChartsComponent implements OnInit {
       this.httpService.getAuth().subscribe((data: any) => {
         this.appComponent.loggedIn = data.success;
         if (this.appComponent.loggedIn) {
+          window.history.pushState({}, '', this.appComponent.rootURL);
         }
         else {
           this.router.navigateByUrl("/login");
